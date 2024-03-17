@@ -1,0 +1,76 @@
+<div class="dashboard-container">
+    <div class="date-range">
+        <div class="start-end-date">
+            <div class="start-date-div">
+                <span class="start-date-label">Start Date</span>
+                <input class="start-date-picker" type="date" [(ngModel)]="startDate" value="08/25/2023">
+            </div>
+            <div class="end-date-div">
+                <span class="end-date-label">End Date</span>
+                <input class="end-date-picker" type="date" [(ngModel)]="endDate" value="08/28/2023">
+            </div>
+        </div>
+        <div class="submit-button">
+            <button class="date-button" (click)="submit()">Submit</button>
+        </div>
+    </div>
+    <div class="callouts">
+        <div class="cards">
+            <div class="lob-card peach">
+                <span class="data">Lorem Ipsum</span>
+                <span class="data number">{{totalNewMembers}}</span>
+            </div>
+            <div class="lob-card green">
+                <span class="data">Dolor Sit</span>
+                <span class="data number">{{totalTermMembers}}</span>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="lob-card blue">
+                <span class="data">Adipiscing Elit</span>
+                <span class="data number">{{totalReinstatedMembers}}</span>
+            </div>
+            <div class="lob-card purple">
+                <span class="data">Lorem Ipsum</span>
+                <span class="data number">{{totalDeceasedMembers}}</span>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="lob-card pink">
+                <span class="data">Lorem Ipsum</span>
+                <span class="data number">{{totalIdCardsSent}}</span>
+            </div>
+            <div class="lob-card gray">
+                <span class="data">Commodo Consequat</span>
+                <span class="data number">{{totalWelcomeKitSent}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="graphs">
+        <div class="radio-buttons-div data">
+            
+            <input type="radio" id="newMemberRadio" name="fav_language" value="member" (click)="makePieIconVisible('Y')" checked="checked"
+            (change)="onItemChange($event)">
+            <label for="javascript">New Member</label>
+            
+            <input type="radio" id="idCardRadio" name="fav_language" value="card" (click)="makePieIconVisible('N')"
+            (change)="onItemChange($event)">
+            <label for="html">ID Card</label><br>
+            
+            <input type="radio" id="welcomeKitRadio" name="fav_language" value="kit" (click)="makePieIconVisible('N')"
+            (change)="onItemChange($event)">
+            <label for="css">Welcome Kit</label><br>
+            
+
+            <label for="javascript" class="chart-label">Charts</label>
+            <i class='bx bx-line-chart chart-icon' (click)="changeGraph('line')"></i>
+            <i class='bx bx-pie-chart chart-icon' (click)="changeGraph('pie')" [ngClass]="{'bx bx-pie-chart chart-icon': true, 'hide': pieIconVisible}"></i>
+            <i class='bx bx-bar-chart chart-icon' (click)="changeGraph('bar')"></i>
+        </div>
+        <div class="different-graphs">
+            <div id="curve_chart" [hidden]="!lineChart"></div>
+            <div id="piechart" [hidden]="!pieChart || pieIconVisible"></div>
+            <div id="columnchart_material" [hidden]="!barChart"></div>
+        </div>
+    </div>
+</div>

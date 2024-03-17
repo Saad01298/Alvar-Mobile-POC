@@ -1,0 +1,37 @@
+<div class="login-container">
+    <div class="optum-alvar-and-cns">
+        <div class="logo-and-optum">
+            <img src="assets/Optum_Logo.png" class="logo">
+            <div class="optum-heading"><span>Optum</span></div>
+        </div>
+        <div>
+            <div class="alvar-heading"><span>ALVAR</span></div>
+            <div class="cns-heading"><span>Lorem & Ipsum</span></div>
+        </div>
+    </div>
+    <div class="login-form">
+        <div>
+            <span class="login-span">Login</span>
+        </div>
+        <div class="login-inputs">
+            <div>
+                <label for="msId" class="msid-password-span">Username</label>
+            </div>
+            <div class="icon-and-input">
+                <i style="position: absolute; padding-left: 2px;" class='bx bx-id-card'></i>
+                <input type="text" id="msId" name="firstname">
+            </div>
+
+            <div style="margin-top: 20px;">
+                <label for="password" class="msid-password-span">Password</label>
+            </div>
+            <div class="icon-and-input">
+                <i style="position: absolute; padding-left: 2px;" class='bx bx-lock'></i>
+                <input type="password" id="password" name="lastname">
+            </div>
+        </div>
+    </div>
+    <div class="login-button">
+        <button class="button-5" role="button" routerLink="/main" (click)="loggedIn()">Sign In</button>
+    </div>
+</div>

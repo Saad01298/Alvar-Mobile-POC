@@ -1,0 +1,27 @@
+<div class="main-container">
+    <!-- Header -->
+    <div class="header">
+        <img src="assets/alvarlogo.jpg" class="logo">
+        <div class="header-text">
+            <div class="alvar" (click)="returnToHome()">ALVAR</div>
+            <div class="smart-surveliance" (click)="returnToHome()">Smart Surveliance</div>
+        </div>
+    </div>
+
+    <!-- Mian Body -->
+    <div class="router-class">
+        <router-outlet></router-outlet>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="back-div">
+            <i class='bx bx-chevron-left'></i>
+            <a (click)="back()" style="cursor: pointer;">Back</a>
+        </div>
+        <div class="next-div">
+            <a (click)="next()" style="cursor: pointer;" [ngClass]="{'disable': disableNextButton}">Next</a>
+            <i [ngClass]="{'bx bx-chevron-right': true, 'disable': disableNextButton}"></i>
+        </div>
+    </div>
+</div>
